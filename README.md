@@ -308,10 +308,10 @@ PATCH  /api/admin/contacts/:id/status # Actualizar estado
 | Desarrollador | GitHub |
 |:-------------:|:------:|
 | **Adri** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fardatxo) |
-| **Gian** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GianCarlos25) |
-| **Alberto** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alarmi04) |
-| **Ismael** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pequemaquina-ctrl) |
-| **Alex** | [![GitHub](https://img.shields.io/badge/fardatxo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AVL05) |
+| **Gian** | [![GitHub](https://img.shields.io/badge/giancarlos25-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GianCarlos25) |
+| **Alberto** | [![GitHub](https://img.shields.io/badge/alarmi04-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alarmi04) |
+| **Ismael** | [![GitHub](https://img.shields.io/badge/pequemaquina-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pequemaquina-ctrl) |
+| **Alex** | [![GitHub](https://img.shields.io/badge/AVL05-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AVL05) |
 
 </div>
 
