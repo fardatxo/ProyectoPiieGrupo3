@@ -389,8 +389,12 @@ const submitForm = async () => {
 
         Object.keys(form).forEach(key => {
             if (form[key] !== null && form[key] !== '') {
-                if (Array.isArray(form[key])) {
-                    formData.append(key, JSON.stringify(form[key]));
+                if (typeof form[key] === 'boolean') {
+                    formData.append(key, form[key] ? '1' : '0');
+                } else if (Array.isArray(form[key])) {
+                    form[key].forEach(item => {
+                        formData.append(`${key}[]`, item);
+                    });
                 } else {
                     formData.append(key, form[key]);
                 }
@@ -410,7 +414,14 @@ const submitForm = async () => {
         router.push('/admin/propiedades');
     } catch (error) {
         console.error('Error saving property:', error);
-        alert('Error al guardar la propiedad');
+        if (error.response && error.response.data && error.response.data.message) {
+            alert(`Error: ${error.response.data.message}`);
+            if (error.response.data.errors) {
+                console.log('Validation errors:', error.response.data.errors);
+            }
+        } else {
+            alert('Error al guardar la propiedad');
+        }
     } finally {
         saving.value = false;
     }

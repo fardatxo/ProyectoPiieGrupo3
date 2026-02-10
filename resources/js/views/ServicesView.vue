@@ -1,10 +1,19 @@
 <template>
-    <div>
+    <div class="-mt-20">
         <!-- Hero -->
-        <section class="bg-primary-700 text-white py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h1>
-                <p class="text-primary-100 text-lg max-w-2xl">
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img 
+                    src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=2000&q=80" 
+                    alt="Servicios Inmobiliarios Sostenibles" 
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-primary-900/80 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/40 to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">Nuestros Servicios</h1>
+                <p class="text-primary-100 text-lg md:text-xl max-w-2xl">
                     Más que una inmobiliaria, somos tu partner en sostenibilidad. Te acompañamos en todo el proceso hacia un hogar más eficiente.
                 </p>
             </div>
@@ -15,9 +24,13 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid gap-12">
                     <!-- Compra y Venta -->
-                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex">
-                        <div class="lg:w-1/2 h-64 lg:h-auto bg-gray-200">
-                            <img src="/images/service-buy-sell.jpg" alt="Compra y Venta" class="w-full h-full object-cover" />
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex group hover:shadow-xl transition-shadow duration-300">
+                        <div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                                alt="Compra y Venta" 
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                            />
                         </div>
                         <div class="lg:w-1/2 p-8 lg:p-12">
                             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
@@ -59,9 +72,13 @@
                     </div>
 
                     <!-- Auditorías Energéticas -->
-                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex lg:flex-row-reverse">
-                        <div class="lg:w-1/2 h-64 lg:h-auto bg-gray-200">
-                            <img src="/images/service-audit.jpg" alt="Auditorías Energéticas" class="w-full h-full object-cover" />
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex lg:flex-row-reverse group hover:shadow-xl transition-shadow duration-300">
+                        <div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" 
+                                alt="Auditorías Energéticas" 
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                            />
                         </div>
                         <div class="lg:w-1/2 p-8 lg:p-12">
                             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
@@ -103,9 +120,13 @@
                     </div>
 
                     <!-- Gestión de Subvenciones -->
-                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex">
-                        <div class="lg:w-1/2 h-64 lg:h-auto bg-gray-200">
-                            <img src="/images/service-subsidies.jpg" alt="Gestión de Subvenciones" class="w-full h-full object-cover" />
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex group hover:shadow-xl transition-shadow duration-300">
+                        <div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" 
+                                alt="Gestión de Subvenciones" 
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                            />
                         </div>
                         <div class="lg:w-1/2 p-8 lg:p-12">
                             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
@@ -147,9 +168,13 @@
                     </div>
 
                     <!-- Proyectos de Rehabilitación -->
-                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex lg:flex-row-reverse">
-                        <div class="lg:w-1/2 h-64 lg:h-auto bg-gray-200">
-                            <img src="/images/service-rehabilitation.jpg" alt="Proyectos de Rehabilitación" class="w-full h-full object-cover" />
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden lg:flex lg:flex-row-reverse group hover:shadow-xl transition-shadow duration-300">
+                        <div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" 
+                                alt="Proyectos de Rehabilitación" 
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                            />
                         </div>
                         <div class="lg:w-1/2 p-8 lg:p-12">
                             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">

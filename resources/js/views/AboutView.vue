@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="-mt-20">
         <!-- Hero -->
-        <section class="bg-primary-700 text-white py-16">
+        <section class="bg-primary-700 text-white pt-32 pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 class="text-3xl md:text-4xl font-bold mb-4">Quiénes Somos</h1>
                 <p class="text-primary-100 text-lg max-w-2xl">

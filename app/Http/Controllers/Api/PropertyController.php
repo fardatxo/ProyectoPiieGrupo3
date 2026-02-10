@@ -83,9 +83,20 @@ class PropertyController extends Controller
             'sustainability_features' => 'nullable|array',
             'certifications' => 'nullable|array',
             'is_featured' => 'boolean',
+            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:5120',
+            'energy_certificate_pdf' => 'nullable|mimes:pdf|max:10240',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
+        $slug = Str::slug($validated['title']);
+        $originalSlug = $slug;
+        $count = 1;
+
+        while (Property::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+
+        $validated['slug'] = $slug;
 
         // Handle images upload
         if ($request->hasFile('images')) {

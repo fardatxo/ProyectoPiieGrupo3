@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen bg-gray-50">
-        <AppHeader />
+        <AppHeader v-if="!isAdminRoute" />
         <main>
             <router-view v-slot="{ Component }">
                 <transition name="fade" mode="out-in">
@@ -8,13 +8,18 @@
                 </transition>
             </router-view>
         </main>
-        <AppFooter />
+        <AppFooter v-if="!isAdminRoute" />
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import AppHeader from './components/layout/AppHeader.vue';
 import AppFooter from './components/layout/AppFooter.vue';
+
+const route = useRoute();
+const isAdminRoute = computed(() => route.path.startsWith('/admin'));
 </script>
 
 <style>

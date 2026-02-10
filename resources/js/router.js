@@ -71,6 +71,13 @@ const routes = [
     {
         path: '/admin',
         component: AdminLayout,
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('isAdminAuthenticated')) {
+                next();
+            } else {
+                next('/');
+            }
+        },
         children: [
             {
                 path: '',

@@ -51,6 +51,22 @@
                         ></span>
                     </router-link>
 
+                    <!-- Admin Link (Desktop) -->
+                    <button
+                        @click="handleAdminAccess"
+                        class="relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 group flex items-center gap-2"
+                        :class="[
+                            isActive('/admin')
+                                ? (scrolled ? 'text-primary-600' : 'text-white')
+                                : (scrolled ? 'text-gray-600 hover:text-primary-600' : 'text-white/80 hover:text-white')
+                        ]"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        Admin
+                    </button>
+
                     <!-- CTA Button -->
                     <router-link
                         to="/calculadora"
@@ -134,6 +150,24 @@
                             ></span>
                             {{ item.name }}
                         </router-link>
+
+                        <!-- Admin Link (Mobile) -->
+                        <button
+                            @click="() => { mobileMenuOpen = false; handleAdminAccess(); }"
+                            class="w-full flex items-center px-4 py-3 text-base font-medium rounded-xl transition-all duration-200"
+                            :class="isActive('/admin')
+                                ? 'bg-primary-50 text-primary-600'
+                                : 'text-gray-700 hover:bg-gray-50 hover:text-primary-600'"
+                        >
+                            <span
+                                class="w-2 h-2 rounded-full mr-3 transition-all duration-200"
+                                :class="isActive('/admin') ? 'bg-primary-500' : 'bg-gray-300'"
+                            ></span>
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Admin
+                        </button>
                     </div>
 
                     <div class="p-4 bg-gradient-to-r from-primary-500 to-accent-500">
@@ -159,9 +193,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
+const router = useRouter();
 const mobileMenuOpen = ref(false);
 const scrolled = ref(false);
 
@@ -177,6 +212,22 @@ const navigation = [
 const isActive = (to) => {
     if (to === '/') return route.path === '/';
     return route.path === to || route.path.startsWith(to + '/');
+};
+
+const handleAdminAccess = () => {
+    // Check if already authenticated
+    if (sessionStorage.getItem('isAdminAuthenticated')) {
+        router.push('/admin');
+        return;
+    }
+
+    const password = prompt('Introduce la contraseña de administrador:');
+    if (password === 'contra123') {
+        sessionStorage.setItem('isAdminAuthenticated', 'true');
+        router.push('/admin');
+    } else if (password !== null) {
+        alert('Contraseña incorrecta');
+    }
 };
 
 const handleScroll = () => {
